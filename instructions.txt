@@ -1,0 +1,18 @@
+OOP Ex6 Instructions
+
+Ball in a Maze is a simple game where ball moves in a maze and user can direct its direction with arrow keys. 
+First task is to pick the Key using the ball and then open the door.  
+when user has picked the Key the ball changes color and the Door becomes visible. 
+When the Door is opened the game starts with new maze (higher difficulty level) and ball moves more rapidly. 
+When all the levels have been executed the game ends and GAME OVER text is displayed. 
+There are 4 levels  (EASY, INTERMEDIATE, DIFFICULT, EXPERT) that differ with maze complexity and ball speed.  
+
+Exercise 6 
+Fill in the attached code so that the program Ball in a Maze realizes state diagram and the description. 
+NOTE:
+- the code has some methods already implemented but some has to be completed so that: 
+- every Maze level has complete set of bars, key and door 
+- it is possible to execute every level 
+- ball speed increases when level is higher 
+- ball bounces from all borders and bars 
+- ball direction can be changed with all arrow keys 
