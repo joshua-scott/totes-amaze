@@ -65,14 +65,14 @@ namespace totes_amaze
             starty = random.Next((int)(canvas.Width / 10), (int)(canvas.Height - canvas.Width / 10));
             directionx = (random.Next(10000) % 2 == 0) ? 1 : -1;
             directiony = (random.Next(10000) % 3 == 0) ? 1 : -1;
-            if (!maze.Next(next).Equals(LEVELS.INTERMEDIATE))
+            if (!maze.Next(next).Equals(LEVELS.OVER))
             {
                 DrawMaze();
                 result = true;
             }
             else
             {
-                DrawText(canvas.Width / 2 - 50, canvas.Height / 2, "GAME OVER");
+                DrawText(canvas.Width / 2 - 50, canvas.Height / 2, "YOU R WINN4R");
             }
             return result;
         }
@@ -98,22 +98,24 @@ namespace totes_amaze
             if (startx <= (canvas.Width / maze.Division) / 3 || startx >= canvas.Width - (canvas.Width / maze.Division) / 3)
                 directionx *= -1;
             //horizontal
-
+            if (starty <= (canvas.Height / maze.Division) / 3 || starty >= canvas.Height - (canvas.Height / maze.Division) / 3)
+                directiony *= -1;
             //maze bars
             int hit = BarHit(new Point(startx, starty), (canvas.Width / maze.Division) / 3, (canvas.Height / maze.Division) / 3);
             //horizontal
             if (hit == -1)
                 directionx *= -1;
             //vertical
-            
+            else if (hit == 1)
+                directiony *= -1;
             //key picked
             if (color != color2 &&
                 KeyHit(new Point(startx, starty), (canvas.Width / maze.Division) / 3, (canvas.Height / maze.Division) / 3))
             {
                 //change ball color
-                
+                color = color2;
                 //door visible
-                
+                drawDoor(doorPoint, maze.Division);
             }
             //draw ball
             DrawBall((canvas.Width / maze.Division) / 2, startx += stepx * directionx, starty += stepy * directiony, color);
@@ -135,10 +137,12 @@ namespace totes_amaze
         {
             if (key == Key.Left)
                 directionx = -1;
-            //other keys
-
-
-
+            else if (key == Key.Right)
+                directionx = 1;
+            else if (key == Key.Up)
+                directiony = -1;
+            else if (key == Key.Down)
+                directiony = 1;
         }
 
         /// <summary>
@@ -265,14 +269,18 @@ namespace totes_amaze
             int dir = 0; //-1 horizontal hit, +1 vertical hit, 0 no hit
             foreach (var v in bars)
             {
-                //vertical
-                if (v.Y1 == v.Y2) 
+                //horizontal
+                if (v.Y1 == v.Y2)
                 {
                     if (Math.Abs(p.Y - v.Y1) <= distancey && p.X >= v.X1 && p.X <= v.X2)
                         dir = 1;
                 }
-                //horizontal
-
+                //vertical
+                if (v.X1 == v.X2)                                                                   
+                {
+                    if (Math.Abs(p.X - v.X1) <= distancex && p.Y >= v.Y1 && p.Y <= v.Y2)
+                        dir = -1;
+                }
             }
             return dir;
         }
@@ -299,6 +307,13 @@ namespace totes_amaze
         {
             bool result = false;
             //check if the ball center point is within given distance of doorPoint
+
+            
+
+            if (Math.Abs(p.X - doorPoint.X) <= distancex * 2 && Math.Abs(p.Y - doorPoint.Y) <= distancey * 2)
+            {
+                result = true;
+            }
 
             return result;
         }

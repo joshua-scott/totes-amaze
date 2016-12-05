@@ -59,6 +59,10 @@ namespace totes_amaze
             {
                 dispatcherTimer = new System.Windows.Threading.DispatcherTimer();
                 dispatcherTimer.Tick += new EventHandler(Tick_ball);
+
+                // Make the ball move faster at each level
+                tickInMillis -= 75;
+
                 dispatcherTimer.Interval = new TimeSpan(0, 0, 0, 0, tickInMillis);
                 dispatcherTimer.Start();
             }

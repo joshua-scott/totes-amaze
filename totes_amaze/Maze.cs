@@ -77,8 +77,8 @@ namespace totes_amaze
             {
                 case LEVELS.EASY: p = new Point(4, 1); break;
                 case LEVELS.INTERMEDIATE: p = new Point(10, 7); break;
-                case LEVELS.DIFFICULT: break;
-                case LEVELS.EXPERT: break;
+                case LEVELS.DIFFICULT: p = new Point(8, 13); break;
+                case LEVELS.EXPERT: p = new Point(13, 17); break;
                 default: break;
             }
             return p;
@@ -96,8 +96,8 @@ namespace totes_amaze
             {
                 case LEVELS.EASY: p = new Point(1, 5); break;
                 case LEVELS.INTERMEDIATE: p = new Point(3, 0); break;
-                case LEVELS.DIFFICULT: break;
-                case LEVELS.EXPERT: break;
+                case LEVELS.DIFFICULT: p = new Point(2, 4); break;
+                case LEVELS.EXPERT: p = new Point(3, 4); break;
                 default: break;
             }
             return p;
@@ -126,8 +126,27 @@ namespace totes_amaze
                     points.Add(new Pair(new Point(1, 2), new Point(3, 2)));
                     points.Add(new Pair(new Point(3, 7), new Point(6, 7)));
                     break;
-                case LEVELS.DIFFICULT: break;
-                case LEVELS.EXPERT: break;
+                case LEVELS.DIFFICULT: 
+                    points.Add(new Pair(new Point(2, 8), new Point(2, 11))); //v
+                    points.Add(new Pair(new Point(10, 2), new Point(10, 6)));  // v
+                    points.Add(new Pair(new Point(5, 12), new Point(5, 16)));   //v
+                    points.Add(new Pair(new Point(16, 2), new Point(16, 7)));// v
+                    points.Add(new Pair(new Point(3, 3), new Point(7, 3))); //h
+                    points.Add(new Pair(new Point(11, 14), new Point(17, 14)));//h
+                    points.Add(new Pair(new Point(4, 9), new Point(11, 9)));//h
+                    break;
+                case LEVELS.EXPERT: 
+                    points.Add(new Pair(new Point(17, 9), new Point(17, 14))); //v
+                    points.Add(new Pair(new Point(3, 2), new Point(3, 6)));  // v
+                    points.Add(new Pair(new Point(9, 14), new Point(9, 21)));   //v
+                    points.Add(new Pair(new Point(10, 5), new Point(10, 9)));// v
+                    points.Add(new Pair(new Point(20, 2), new Point(20, 7)));// v
+                    points.Add(new Pair(new Point(3, 21), new Point(7, 21))); //h
+                    points.Add(new Pair(new Point(11, 15), new Point(17, 15))); //h
+                    points.Add(new Pair(new Point(4, 12), new Point(11, 12))); //h
+                    points.Add(new Pair(new Point(11, 7), new Point(16, 7))); // h
+                    points.Add(new Pair(new Point(16, 17), new Point(20, 17))); // h
+                    break;
                 default: break;
             }
             return points;

@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
-  <Class Name="exercise_6.Drawer">
+  <Class Name="totes_amaze.Drawer">
     <Position X="10.5" Y="0.5" Width="5.5" />
     <TypeIdentifier>
       <HashCode>AiIIgAQBAEAgggAgACAAAABCgAgAGCGChAQDAAIAAIA=</HashCode>
@@ -10,7 +10,7 @@
       <Field Name="maze" />
     </ShowAsAssociation>
   </Class>
-  <Class Name="exercise_6.MainWindow">
+  <Class Name="totes_amaze.MainWindow">
     <Position X="4.75" Y="1.75" Width="3.75" />
     <TypeIdentifier>
       <HashCode>AABCAAAAAAAAEAAAAAAAAAAAAQAACAAAAIACAAAAAAA=</HashCode>
@@ -20,13 +20,13 @@
       <Field Name="drawer" />
     </ShowAsAssociation>
   </Class>
-  <Class Name="exercise_6.Maze">
+  <Class Name="totes_amaze.Maze">
     <Position X="17.25" Y="1" Width="2" />
     <Compartments>
       <Compartment Name="Nested Types" Collapsed="false" />
     </Compartments>
     <NestedTypes>
-      <Struct Name="exercise_6.Maze.Pair">
+      <Struct Name="totes_amaze.Maze.Pair">
         <TypeIdentifier>
           <NewMemberFileName>Maze.cs</NewMemberFileName>
         </TypeIdentifier>
@@ -40,7 +40,7 @@
       <Field Name="level" />
     </ShowAsAssociation>
   </Class>
-  <Enum Name="exercise_6.LEVELS">
+  <Enum Name="totes_amaze.LEVELS">
     <Position X="20.5" Y="2.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAIkAAAAAgAAAAAQAAAAAAAAAAAAAAAA=</HashCode>
